@@ -23,36 +23,61 @@ Look up [Dockerfile exemple](Dockerfile)
 
 #### 2. Creating a container
 After creating the **Dockerfile**, here’s how to proceed to build and run a Docker container :
-1. Build the Docker Image :
-    Open your terminal (or command prompt) and navigate to the directory containing the Dockerfile. Then, run the following command to build the Docker image: `docker build -t my-python-app .`
+1. **Build the Docker Image :**
+    Open your terminal (or command prompt) and navigate to the directory containing the Dockerfile. Then, run the following command to build the Docker image:
+   ```
+   docker build -t my-python-app .
+   ```
     
     * `-t my-python-app` : This tags the image with the name my-python-app.
     * `.` : This specifies the build context, which is the current directory Docker will use the files in this directory to build the image.
 
-2. Verify the Image
-    Once the image is built, you can list your Docker images to ensure the build was successful : `docker images`
+2. **Verify the Image**
+    Once the image is built, you can list your Docker images to ensure the build was successful :
 
+    ```
+    docker images
+    ```
 
-3. Run the Docker Container from the image
-    Once the image is built, you can run a container from it with the following command: `docker run -d -p 80:80 my-python-app`
+3. **Run the Docker Container from the image**
+    Once the image is built, you can run a container from it with the following command:
+
+   ```
+   docker run -d -p 80:80 my-python-app
+   ```
 
     * `-d` : Runs the container in detached mode (in the background).
     * `-p 80:80` : Maps port 80 of your host machine to port 80 of the container. This means you can access the application via http://localhost on your host machine.
     * `my-python-app` : This is the name of the image you just built.
     * `--name <container-name>`(Optionnal): Assigns a name to the running container for easier reference.
 
-4. Check Running Containers
-    You can verify if the container is running by listing all active containers: `docker ps`
-
-5. Interact with the Running Container
-    You can enter the running container's shell to inspect it further:`docker exec -it <container-name> /bin/bash`
+4. **Check Running Containers**
+    You can verify if the container is running by listing all active containers:
+    ```
+    docker ps`
+    ```
+    
+5. **Interact with the Running Container**
+    You can enter the running container's shell to inspect it further:
+    ```
+   docker exec -it <container-name> /bin/bash
+    ```
+    
     This opens an interactive terminal session inside the container.
 
-6. Stop and Remove Containers
-    Once you're done with the container, you can stop it: `docker stop <container-name>`
+6. **Stop and Remove Containers**
+    Once you're done with the container, you can stop it:
 
-    To remove it: `docker rm <container-name>`
+    ```
+    docker stop <container-name>
+    ```
+
+    To remove it:
+
+    ```
+    docker rm <container-name>
+    ```
 
 
-7. Push the Docker Image to a Registry (Optional)
-If you want to share your image or deploy it on another server, you can push it to a Docker registry like [Docker Hub](https://hub.docker.com/)  or a private registry.
+7. **Push the Docker Image to a Registry (Optional)**
+    If you want to share your image or deploy it on another server, you can push it to a Docker registry like [Docker Hub](https://hub.docker.com/)  or a private registry.
