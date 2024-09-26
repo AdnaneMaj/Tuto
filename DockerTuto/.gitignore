@@ -1,0 +1,5 @@
+#Ignore some files
+.\channels.json
+
+#Ignore some folders
+**/__pycache__/
