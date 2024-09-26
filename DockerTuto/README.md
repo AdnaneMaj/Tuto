@@ -54,7 +54,7 @@ After creating the **Dockerfile**, here’s how to proceed to build and run a Do
 4. **Check Running Containers**
     You can verify if the container is running by listing all active containers:
     ```
-    docker ps`
+    docker ps
     ```
     
 5. **Interact with the Running Container**
