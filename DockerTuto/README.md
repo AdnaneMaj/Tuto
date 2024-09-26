@@ -12,7 +12,8 @@ Docker is a tool that allows developers, sys-admins etc. to easily deploy their 
 
 ### Working with docker
 #### 1. Creating a Docker file
-A file provided to set the instruction for creating a **docker image**, it contains some instructions like : ```FROM python:latest```
+A file provided to set the instruction for creating a **docker image**, it contains some instructions like : 
+```FROM python:latest```
 Look up [Dockerfile exemple](DockerTuto/Dockerfile)
 
 
