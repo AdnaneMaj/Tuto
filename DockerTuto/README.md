@@ -15,7 +15,21 @@ Docker is a tool that allows developers, sys-admins etc. to easily deploy their 
 A file provided to set the instruction for creating a **docker image**, it contains some instructions like : 
 
 ```
-FROM python:latest
+# Use a base image
+FROM python:3.8-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy application files to the container
+COPY . /app
+
+# Install any dependencies
+RUN pip install -r requirements.txt
+
+# Specify the command to run the app
+CMD ["python", "app.py"]
+
 ```
 
 Look up [Dockerfile exemple](Dockerfile)
