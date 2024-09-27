@@ -10,6 +10,50 @@
 ## What is docker
 Docker is a tool that allows developers, sys-admins etc. to easily deploy their applications in a sandbox (called containers) to run on the host operating system i.e. Linux. The key benefit of Docker is that it allows users to **package an application with all of its dependencies into a standardized unit** for software development. Unlike virtual machines, containers do not have high overhead and hence enable more efficient usage of the underlying system and resources.
 
+<details>
+  <summary>More details about Docker(images,containers,...)</summary>
+
+  <details>
+    <summary>1. Docker Image</summary>
+    <p>An image is a read-only template that contains the application code, the required system libraries, tools, dependencies, and other configuration settings needed to run the app. It's like a blueprint for building a house: it defines all the materials, design, and components needed but isn’t the actual house.</p>
+    <p><strong>Key characteristics of Docker images:</strong></p>
+    <ul>
+      <li><strong>Static:</strong> Once created, an image doesn't change.</li>
+      <li><strong>Portable:</strong> You can share it with others, move it across machines, or deploy it in different environments, and it will behave the same way everywhere.</li>
+      <li><strong>Layered:</strong> Images are made up of multiple layers, where each layer represents an instruction in the Dockerfile (e.g., installing dependencies, copying files, etc.). Each time you modify the image, a new layer is added.</li>
+    </ul>
+    <p><strong>Example of what's inside a Docker image:</strong></p>
+    <ul>
+      <li>A base operating system (e.g., Linux).</li>
+      <li>Installed software or libraries (e.g., Python, Node.js).</li>
+      <li>Your application code.</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary>2. Docker Container</summary>
+    <p>A container is a running instance of a Docker image. While the image is just a set of files and configurations, the container is where the actual work happens. When you start a container, Docker takes the image and creates a runnable, isolated environment for your app to execute.</p>
+    <p><strong>Key characteristics of Docker containers:</strong></p>
+    <ul>
+      <li><strong>Isolated:</strong> Containers run in their own environments, separated from other containers and the host machine. This ensures that your app runs without conflicts, even if other apps need different versions of software.</li>
+      <li><strong>Ephemeral:</strong> Containers are meant to be lightweight and temporary. You can start, stop, and remove them without affecting the underlying image or other containers.</li>
+      <li><strong>Running Process:</strong> Each container has its own process running inside it. When you stop a container, that process is also stopped.</li>
+    </ul>
+    <p><strong>Example Comparison:</strong></p>
+    <p>Think of an image like a recipe for baking a cake, and the container as the baked cake itself:</p>
+    <ul>
+      <li><strong>Image:</strong> This is the recipe with all the details about ingredients, measurements, and steps (the code, libraries, etc.).</li>
+      <li><strong>Container:</strong> This is the actual cake, baked according to the recipe. You can eat the cake (run the container), slice it (stop or restart it), or throw it away (remove the container). But the recipe (the image) stays unchanged, and you can use it to make more cakes (run more containers).</li>
+    </ul>
+  </details>
+
+  <p><strong>In summary:</strong></p>
+  <ul>
+    <li><strong>Image:</strong> A static blueprint that defines how to build and configure your app’s environment.</li>
+    <li><strong>Container:</strong> A live, isolated instance where your app actually runs, based on the image.</li>
+  </ul>
+</details>
+
 ## Working with docker
 ### 1. Creating a Docker file
 A file provided to set the instruction for creating a **docker image**, it contains some instructions like : 
