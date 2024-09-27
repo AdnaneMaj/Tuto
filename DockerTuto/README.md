@@ -14,7 +14,7 @@ Docker is a tool that allows developers, sys-admins etc. to easily deploy their 
   <summary>More details about Docker(images,containers,...)</summary>
 
   <details>
-    <summary>1. Docker Image</summary>
+    <summary>Docker Image</summary>
     <p>An image is a read-only template that contains the application code, the required system libraries, tools, dependencies, and other configuration settings needed to run the app. It's like a blueprint for building a house: it defines all the materials, design, and components needed but isn’t the actual house.</p>
     <p><strong>Key characteristics of Docker images:</strong></p>
     <ul>
@@ -31,7 +31,7 @@ Docker is a tool that allows developers, sys-admins etc. to easily deploy their 
   </details>
 
   <details>
-    <summary>2. Docker Container</summary>
+    <summary>Docker Container</summary>
     <p>A container is a running instance of a Docker image. While the image is just a set of files and configurations, the container is where the actual work happens. When you start a container, Docker takes the image and creates a runnable, isolated environment for your app to execute.</p>
     <p><strong>Key characteristics of Docker containers:</strong></p>
     <ul>
