@@ -56,6 +56,9 @@ Docker is a tool that allows developers, sys-admins etc. to easily deploy their 
 
 ## Working with docker
 ### 1. Creating a Docker file
+
+> Check this link for better understanding on the official Docker Webpage : [Dockerfile](https://docs.docker.com/build/concepts/dockerfile/)
+
 A file provided to set the instruction for creating a **docker image**, it contains some instructions like : 
 
 ```
@@ -76,10 +79,18 @@ CMD ["python", "app.py"]
 
 ```
 
+* **Layers**
+    In the context of Docker, a layer refers to an immutable file system change or instruction added to the image during the build process. Each command in a Dockerfile (such as `RUN`, `COPY`, or `ADD`) creates a new layer, which is then stacked on top of the previous layers to form the final Docker image.
+
+    *Note that Docker caches each layer and can reuse layers from previous builds if the corresponding instructions haven't changed, and it will run all instruction (rebuild all layer) that comes after the layer where the changes happenned*
+
+    *Note that it's a best practices to minimize the number of layers by running for example multiple commands in the same layer :* `RUN apt-get update && apt-get install -y package1 package2`
+
 Look up [Dockerfile exemple](Dockerfile)
 
+---
 
-### 2. Creating a container
+### 2. Creating a container from a Docker image
 After creating the **Dockerfile**, here’s how to proceed to build and run a Docker container :
 1. **Build the Docker Image :**
 
@@ -146,3 +157,43 @@ After creating the **Dockerfile**, here’s how to proceed to build and run a Do
 13. **Push the Docker Image to a Registry (Optional)**
     
     If you want to share your image or deploy it on another server, you can push it to a Docker registry like [Docker Hub](https://hub.docker.com/)  or a private registry.
+
+
+
+### 3. Docker Compose
+
+**Docker Compose is** a tool that allows you to define and manage multi-container Docker applications. Instead of running multiple docker run commands for each container in your application, you can use Docker Compose to define all the services (containers), their configurations, and dependencies in a single YAML file (docker-compose.yml).
+
+Docker Compose simplifies starting, stopping, and managing complex applications with multiple containers by allowing you to control everything with just a few commands.
+
+1. **docker-compose.yaml file**
+
+    The key concepts of a **docker-compose.yaml** file
+    * **Services:** In Docker Compose, each container is referred to as a service. Each service runs a container, and it’s defined in the docker-compose.yml file. For example, you might have a service for your application, a database, and a caching service like Redis.
+    * **docker-compose.yml File:** This is the core configuration file for Docker Compose, where you define all your services, their build configuration, environment variables, volumes, networks, etc.
+
+    This an example of dockercompose file :
+
+    ```
+    version: '3'
+
+    services:
+    web:
+        build: .
+        ports:
+        - "5000:5000"
+        volumes:
+        - .:/code
+        environment:
+        - FLASK_ENV=development
+
+    redis:
+        image: "redis:alpine"
+    ```
+
+2. **How to use Docker compose**
+
+    * Create a **docker-compose.yaml**
+    * Start Start the Application : With docker compose this can be done with one single command: `docker-compose up`
+    * Docker also allows to scale (create multiple) services : `docker-compose up --scale web=3` This will run 3 instances of the **web** service.
+    * Stop the Application to stop and clean up all resources created by Docker Compose: `docker-compose down`

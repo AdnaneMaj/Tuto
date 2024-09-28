@@ -1,6 +1,7 @@
 #Gitignore
 #Ignore some files
 DockerTuto/channels.json
+track.txt
 
 #Ignore some folders
 **/__pycache__/
