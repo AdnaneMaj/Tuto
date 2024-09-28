@@ -159,6 +159,7 @@ After creating the **Dockerfile**, here’s how to proceed to build and run a Do
     If you want to share your image or deploy it on another server, you can push it to a Docker registry like [Docker Hub](https://hub.docker.com/)  or a private registry.
 
 
+---
 
 ### 3. Docker Compose
 
