@@ -195,6 +195,16 @@ Docker Compose simplifies starting, stopping, and managing complex applications 
 2. **How to use Docker compose**
 
     * Create a **docker-compose.yaml**
-    * Start Start the Application : With docker compose this can be done with one single command: `docker-compose up`
-    * Docker also allows to scale (create multiple) services : `docker-compose up --scale web=3` This will run 3 instances of the **web** service.
-    * Stop the Application to stop and clean up all resources created by Docker Compose: `docker-compose down`
+    * Start Start the Application : With docker compose this can be done with one single command: 
+    ```
+    docker-compose up
+    ```
+    * Docker also allows to scale (create multiple) services : 
+    ```
+    docker-compose up --scale web=3
+    ```
+     This will run 3 instances of the **web** service.
+    * Stop the Application to stop and clean up all resources created by Docker Compose: 
+    ```
+    docker-compose down
+    ```
