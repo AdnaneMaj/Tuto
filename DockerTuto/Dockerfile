@@ -1,7 +1,6 @@
-#Defines a base for your image.
 FROM python:latest    
 
-#Sets the working directory for any RUN, CMD, ENTRYPOINT, COPY, and ADD instructions that follow it in the Dockerfile.
+#Set the working directory
 WORKDIR /app
 
 #install dependencies

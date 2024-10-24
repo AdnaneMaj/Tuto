@@ -6,6 +6,7 @@ This a tuto for some concepts that I study as a 3rd year engineering student.
 * [Docker Tuto](DockerTuto/README.md)
 * [Airflow Tuto](AirflowTuto/README.md)
 * [Kafka Tuto](KafkaTuto/README.md)
+* [ZooKeeper Tuto](ZooKeeper/README.md)
 
 
 

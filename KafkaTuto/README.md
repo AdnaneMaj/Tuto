@@ -3,6 +3,7 @@
 This is a very simple kafka tuto
 
 Resources for further reading :
+* [Kafka in 100s](https://www.youtube.com/watch?v=uvb00oaa3k8)
 * [Intro to kafka](https://kafka.apache.org/intro)
 
 
@@ -37,10 +38,14 @@ Kakfa API have all tools one may need to work and moddle databases:
 * Join
 * ...
 
+# How it works in general :
+1. When an event occurs, like a website visit, the producer API creates a new record, stored in the disk in an Ordered and Immutable log, which is the **Topic**
+
+
+
+2. 
+
 
 # Kafka as an event streaming platform
 
-## What is event Streaming ?
-## What can I use event streaming for?
-## Apache Kafka® is an event streaming platform. What does that mean?
 Check [Intro to kafka](https://kafka.apache.org/intro) for this questions.

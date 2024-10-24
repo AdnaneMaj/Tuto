@@ -2,8 +2,8 @@ services: #In our example, we have one single service which is "app"
   app:
     build: . # (optional) This command will re build the image before startign the services 
     container_name: channel-api
-    command: uvicorn main:app --host 0.0.0.0 --port 80 --reload --reload-include * #
+    command: uvicorn main:app --host 0.0.0.0 --port 80 --reload --reload-include * #--relaod will make the image rebuild if a change in the code is spotted, --reload-include lookup all changes in the data for example 
     ports:
       - 8080:80
     volumes:
-      - .:/app #A mapping between the current folder and the /app docker folder
+      - .:/app #A mapping between the current folder and the /app docker folder, if a change in . happened, it will be transposed automatically to /app
