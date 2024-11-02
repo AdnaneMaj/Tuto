@@ -5,6 +5,7 @@ This is a very simple kafka tuto
 Resources for further reading :
 * [Kafka in 100s](https://www.youtube.com/watch?v=uvb00oaa3k8)
 * [Intro to kafka](https://kafka.apache.org/intro)
+* [Kafka explained in arabic video (highly recommended)](https://www.youtube.com/watch?v=X79IjgIUDzU&t=28s)
 
 
 # Motivation behind kafka
@@ -37,6 +38,11 @@ Kakfa API have all tools one may need to work and moddle databases:
 * Agregate
 * Join
 * ...
+
+## Brokers
+Brokers broke the coupling between procedures and services ( if I understood this right), messages or event are put in the event queue, and whomever needs something will get it from there
+
+![](image.png)
 
 # How it works in general :
 1. When an event occurs, like a website visit, the producer API creates a new record, stored in the disk in an Ordered and Immutable log, which is the **Topic**
